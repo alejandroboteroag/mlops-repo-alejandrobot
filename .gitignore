@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Entornos virtuales
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Modelos y artefactos generados
+*.pkl
+*.joblib
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
