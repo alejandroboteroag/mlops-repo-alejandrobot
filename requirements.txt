@@ -1,1 +1,18 @@
-# Dependencias del proyecto 
+# Analisis y manipulacion de datos
+pandas>=2.2
+numpy>=1.26
+scipy>=1.11
+
+# Visualizacion
+matplotlib>=3.8
+seaborn>=0.13
+
+# Machine Learning (se usa desde la fase 2)
+scikit-learn>=1.4
+
+# Notebooks
+jupyter
+ipykernel
+
+# Lectura de Excel (fuente original de la base)
+openpyxl

@@ -1,22 +1,26 @@
+# Entorno virtual
+venv/
+.venv/
+env/
+
 # Python
 __pycache__/
 *.py[cod]
 *.egg-info/
 
-# Entornos virtuales
-.venv/
-venv/
-env/
-
 # Jupyter
 .ipynb_checkpoints/
 
-# Modelos y artefactos generados
-*.pkl
-*.joblib
+# Variables de entorno y secretos
+.env
+*.env
 
-# Sistema / editores
-.DS_Store
-Thumbs.db
+# Editores y sistema operativo
 .vscode/
 .idea/
+Thumbs.db
+.DS_Store
+
+# Logs y temporales
+*.log
+*.tmp
