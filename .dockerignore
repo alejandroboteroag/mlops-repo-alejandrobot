@@ -1,0 +1,28 @@
+# Entornos y control de versiones
+venv/
+.venv/
+env/
+.git/
+.github/
+
+# Archivos generados (el modelo se entrena dentro de la imagen)
+mlops_pipeline/artefactos/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# No necesarios para la API
+tests/
+jenkins/
+Jenkinsfile
+sonar-project.properties
+*.ipynb
+*.md
+
+# Secretos
+.env
+*.env

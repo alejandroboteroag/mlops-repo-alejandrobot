@@ -21,8 +21,11 @@ __pycache__/
 Thumbs.db
 .DS_Store
 
-# Resultados generados por model_training_evaluation.py (modelo, tabla y graficos)
-mlops_pipeline/artefactos/
+# Pruebas y cobertura
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
 
 # Logs y temporales
 *.log
