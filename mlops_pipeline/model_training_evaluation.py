@@ -64,8 +64,8 @@ MAX_DESVIACION_CV = 0.05           # desviacion maxima del ROC-AUC en validacion
 def obtener_modelos():
     """Modelos candidatos. Todos compensan el desbalance de clases."""
     return {
-        "Linea base (Dummy)": DummyClassifier(strategy="most_frequent"),
-        "Regresion Logistica": LogisticRegression(class_weight="balanced", max_iter=2000),
+        "Linea base (Dummy)": DummyClassifier(strategy="most_frequent", random_state=SEMILLA),
+        "Regresion Logistica": LogisticRegression(class_weight="balanced", max_iter=2000, random_state=SEMILLA),
         "Arbol de Decision": DecisionTreeClassifier(
             max_depth=5, min_samples_leaf=50, class_weight="balanced", random_state=SEMILLA
         ),

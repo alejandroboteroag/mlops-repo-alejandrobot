@@ -30,8 +30,8 @@ def test_summarize_classification_mide_la_clase_no_pago():
 
 def test_build_model_retorna_pipeline_y_metricas(datos_divididos):
     X_train, X_test, y_train, y_test, preprocesador = datos_divididos
-    resultado = mte.build_model("Logistica", LogisticRegression(class_weight="balanced", max_iter=2000),
-                                preprocesador, X_train, y_train, X_test, y_test)
+    modelo = LogisticRegression(class_weight="balanced", max_iter=2000, random_state=42)
+    resultado = mte.build_model("Logistica", modelo, preprocesador, X_train, y_train, X_test, y_test)
     resumen = resultado["resumen"]
     assert resumen["modelo"] == "Logistica"
     assert 0.6 < resumen["roc_auc"] < 0.8
@@ -72,8 +72,8 @@ def test_obtener_modelos_incluye_linea_base():
 def test_main_guarda_modelo_tabla_y_graficos(tmp_path, monkeypatch):
     monkeypatch.setattr(mte, "CARPETA_ARTEFACTOS", tmp_path)
     monkeypatch.setattr(mte, "obtener_modelos", lambda: {
-        "Linea base (Dummy)": mte.DummyClassifier(strategy="most_frequent"),
-        "Regresion Logistica": LogisticRegression(class_weight="balanced", max_iter=2000),
+        "Linea base (Dummy)": mte.DummyClassifier(strategy="most_frequent", random_state=42),
+        "Regresion Logistica": LogisticRegression(class_weight="balanced", max_iter=2000, random_state=42),
         "Arbol de Decision": DecisionTreeClassifier(max_depth=3, class_weight="balanced", random_state=1),
     })
     mte.main()

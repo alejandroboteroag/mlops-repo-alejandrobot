@@ -31,7 +31,7 @@ def modelo_prueba(datos_divididos):
     X_train, _, y_train, _, preprocesador = datos_divididos
     modelo = Pipeline([
         ("preprocesador", preprocesador),
-        ("modelo", LogisticRegression(class_weight="balanced", max_iter=2000)),
+        ("modelo", LogisticRegression(class_weight="balanced", max_iter=2000, random_state=42)),
     ])
     return modelo.fit(X_train, y_train)
 
